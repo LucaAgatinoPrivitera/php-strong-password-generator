@@ -5,7 +5,7 @@ L’esercizio è suddiviso in varie milestone ed è molto importante svilupparle
 MILESTONE 1
 Creare una pagina con un form. In questo form l'utente userà un input per selezionare la lunghezza della password da generare.
 Il form redirezionerà su una nuova pagina, che in base alla lunghezza scelta stamperà N volte il carattere "X".
-:avviso: Fatelo con un ciclo che compone una stringa aggiungendo una X per volta e solo poi, alla fine, stampate l'intera stringa.
+Fatelo con un ciclo che compone una stringa aggiungendo una X per volta e solo poi, alla fine, stampate l'intera stringa.
 Obiettivo: generiamo tante X quante ne richiede l'utente.
 
 MILESTONE 2
