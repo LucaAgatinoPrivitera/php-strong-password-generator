@@ -12,6 +12,16 @@ function getName($n)
 
     for ($i = 0; $i < $n; $i++) {
         $index = rand(0, strlen($allowedChars) - 1);
+        if ($n > strlen($allowedChars)) {
+            return "Errore: Numero di caratteri richiesto è maggiore dei caratteri unici disponibili.";
+        }
+
+        $char = $allowedChars[$index];
+
+        // Da chiedere, chatgpt mi dice che devo tenere false, ma con false ottengo solo caratteri uguali
+        if (strpos($randomString, $char) === true) {
+            $randomString .= $char;
+        }
         $randomString .= $allowedChars[$index];
     }
 
@@ -38,15 +48,15 @@ $randomString = getName($numero_caratteri);
     </form>
 
 
-    <h1><?php if ($numero_caratteri > 0) {
-
-            echo ($numero_caratteri);
+    <h1> <?php echo ($numero_caratteri); ?>
+    </h1>
+    <p>
+        <?php if ($numero_caratteri > 0) {
             getName($numero_caratteri);
             echo "<span>" . "$randomString";
         }
         ?>
-
-    </h1>
+    </p>
 
 </body>
 
