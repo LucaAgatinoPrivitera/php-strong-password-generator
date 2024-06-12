@@ -3,6 +3,19 @@ $userPassword = $_GET["userPassword"];
 // A quanto pare questo non funziona in questo caso, da chiedere
 // include 'index.php';
 $numero_caratteri = (int)$_GET['userPassword'];
+$allowedChars = "qwertyuiopasdfghjklzxcvbnm";
+
+function getName($n) {
+    $allowedChars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+ 
+    for ($i = 0; $i < $n; $i++) {
+        $index = rand(0, strlen($allowedChars) - 1);
+        $randomString .= $allowedChars[$index];
+    }
+ 
+    return $randomString;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +36,9 @@ $numero_caratteri = (int)$_GET['userPassword'];
         <?php
         $i = 1;
         while ($i <= $numero_caratteri) {
+            getName($numero_caratteri);
             $i++;
-            echo "<span>" . "X";
+            echo "<span>" . "$randomString";
         }
         ?>
 
