@@ -16,6 +16,7 @@ function getName($n) {
  
     return $randomString;
 }
+$randomString = getName($numero_caratteri);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,12 +35,8 @@ function getName($n) {
 <body>
     <h1><?php echo ($numero_caratteri) ?>
         <?php
-        $i = 1;
-        while ($i <= $numero_caratteri) {
             getName($numero_caratteri);
-            $i++;
             echo "<span>" . "$randomString";
-        }
         ?>
 
     </h1>
