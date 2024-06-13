@@ -1,8 +1,11 @@
 <?php
-$userPassword = $_GET["userPassword"];
-// A quanto pare questo non funziona in questo caso, da chiedere
-// include 'index.php';
-$numero_caratteri = (int)$_GET['userPassword'];
+$userPassword = '';
+
+if (isset($_GET['userPassword']) && !empty($_GET['userPassword'])) {
+    $numero_caratteri = (int)$_GET['userPassword'];
+} else {
+    $numero_caratteri = 0; // Imposta un valore predefinito
+}
 $allowedChars = "qwertyuiopasdfghjklzxcvbnm";
 
 function getName($n)
@@ -48,7 +51,9 @@ $randomString = getName($numero_caratteri);
     </form>
 
 
-    <h1> <?php echo ($numero_caratteri); ?>
+    <h1> <?php if ($numero_caratteri > 0) {
+                echo ($numero_caratteri);
+            } ?>
     </h1>
     <p>
         <?php if ($numero_caratteri > 0) {
